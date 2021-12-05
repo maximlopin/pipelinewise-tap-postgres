@@ -228,7 +228,7 @@ def schema_for_column_datatype(col):
         return schema
 
     if data_type in JSON_TYPES:
-        schema['type'] = nullable_columns(['object', 'array'], col.is_primary_key)
+        schema['type'] = nullable_column('string', col.is_primary_key)
         return schema
 
     if data_type == 'numeric':
