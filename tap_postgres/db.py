@@ -95,7 +95,7 @@ def selected_value_to_singer_value_impl(elem, sql_datatype):
     elif sql_datatype == 'money':
         cleaned_elem = elem
     elif sql_datatype in ['json', 'jsonb']:
-        cleaned_elem = json.loads(elem)
+        cleaned_elem = str(elem)
     elif sql_datatype == 'time with time zone':
         # time with time zone values will be converted to UTC and time zone dropped
         # Replace hour=24 with hour=0

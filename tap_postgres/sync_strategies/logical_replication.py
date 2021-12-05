@@ -216,7 +216,7 @@ def selected_value_to_singer_value_impl(elem, og_sql_datatype, conn_info):
         return elem
 
     if sql_datatype in ['json', 'jsonb']:
-        return json.loads(elem)
+        return str(elem)
 
     if sql_datatype == 'timestamp without time zone':
         if isinstance(elem, datetime.datetime):
